@@ -1,0 +1,54 @@
+# Node Modules
+node_modules/
+dist/
+
+# Logs and temporary files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Django
+*.pyc
+__pycache__/
+db.sqlite3
+media/
+staticfiles/
+
+# Environment Variables
+.env
+secret.env
+
+# Virtual Environment
+venv/
+env/
+
+# macOS
+.DS_Store
+
+# Python Bytecode
+*.py[cod]
+
+# MySQL dumps
+*.sql
+*.dump
+
+# IDE settings
+.idea/
+.vscode/
+# Byte-compiled / optimized / DLL files
+*.pyc
+__pycache__/
+
+# Django Migrations (Optional, but recommended if auto-generated)
+femrsbackend/**/migrations/
+!femrsbackend/**/migrations/__init__.py
+
+# Media uploads
+media/
+femrsbackend/documents/aadhaar/
+femrsbackend/equipment_images/
+
+
+# OS generated files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,218 @@
+/* Equipment Grid Layout */
+.equipmentGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(222px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    background: #f9f9f9;
+  }
+  
+  /* Equipment Card */
+  .equipmentCard {
+    border-radius: 5px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(145deg, #ffffff, #f3f3f3);
+  }
+  
+  .equipmentCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Equipment Image */
+  .equipmentImage {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  /* Card Content 
+  .cardContent {
+
+  }
+  */
+
+  .equipmentTitle {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  .equipmentLocation {
+    font-size: 0.6rem;
+    color: #666;
+    text-align: left; 
+  }
+  
+  .equipmentPrice {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #008407;
+    padding-bottom: 16px;
+  }
+  
+  /* Star Rating */
+  .starRating {
+    display: flex;
+    align-items: center;
+    font-size: 0.5rem;
+  }
+  
+  .emptyStar {
+    color: #c3c3c3;
+    margin-right: 2px;
+  }
+
+  .fullStar {
+    color: #fffb00;
+    background: linear-gradient(45deg, #fffb00, #ff9100);
+    margin-right: 2px;
+  }
+  
+  /* Adjust star size */
+.fullStar, .halfStar, .emptyStar {
+  font-size: 11px; /* Decrease size (e.g., 12px, 14px, etc.) */
+  width: 11px;     /* Works for SVG icons */
+  height: 11px;    
+}
+
+  .ratingValue {
+    margin-left: 5px;
+    font-size: 0.6rem;
+    color: #555;
+  }
+  
+  /* Buttons */
+  .bookButton, .editButton, .addButton, .loginButton, .closeButton {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+    -webkit-text-stroke: 0.2px rgb(255, 255, 255); 
+    border: 1px solid #ffa82f;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .bookButton {
+    background: radial-gradient(ellipse, rgb(255, 203, 70), rgb(255, 232, 185));
+    color: white;
+  }
+  
+  .bookButton:hover {
+    background: #a04566;
+    transform: scale(1.05);
+  }
+  
+  .editButton {
+    background: radial-gradient(ellipse, rgb(253, 97, 6), rgb(255, 155, 42));
+    color: white;
+  }
+  
+  .editButton:hover {
+    background: #868686;
+    transform: scale(1.05);
+  }
+  
+  .addButton {
+    background: #ffa952;
+    color: white;
+    margin-top: 2rem;
+  }
+  
+  .addButton:hover {
+    background: #f99e16;
+    transform: scale(1.05);
+  }
+  
+  /* Modal Styling */
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  
+  .modalContent {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+  }
+  
+  .modalTitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .modalText {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .closeButton {
+    background: #f44336;
+    margin-top: 10px;
+    color: white;
+  }
+  
+  .closeButton:hover {
+    background: #d32f2f;
+    transform: scale(1.01);
+  }
+  
+  .loginButton:hover {
+    
+    transform: scale(1.01);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 500px) {
+    .equipmentGrid {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+      gap: 0.3rem;
+    }
+  
+    .equipmentCard {
+      margin-bottom: 0.5rem;
+    }
+  
+    .cardContent {
+      padding: 0.5rem;
+    }
+  
+    .modalContent {
+      padding: 1.5rem;
+    }
+  
+    .modalTitle {
+      font-size: 1.5rem;
+    }
+  
+    .modalText {
+      font-size: 0.9rem;
+    }
+  }
+
+
+.priceRating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+

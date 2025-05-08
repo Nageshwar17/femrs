@@ -1,0 +1,71 @@
+/* login.css */
+.container {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+    background: linear-gradient(to right, #f4a261, #2a9d8f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .login-container {
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .login-container h2 {
+    text-align: center;
+    color: #2a9d8f;
+    margin-bottom: 24px;
+  }
+  
+  .login-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-container input {
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  .login-container button {
+    padding: 12px;
+    margin-top: 16px;
+    background: #2a9d8f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+  }
+  
+  .login-container button:hover {
+    background: #1f7a6e;
+  }
+  
+  .login-container .register-link {
+    margin-top: 16px;
+    text-align: center;
+  }
+  
+  .login-container .register-link a {
+    color: #c9e751;
+    text-decoration: none;
+  }
+  
+  .login-container .register-link a:hover {
+    text-decoration: underline;
+  }
+  

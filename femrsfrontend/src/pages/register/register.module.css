@@ -1,0 +1,143 @@
+/* register.module.css */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #f4a261, #2a9d8f);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.form-container {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+  animation: fadeIn 0.5s ease-in-out;
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.error {
+  color: #d9534f;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+customInput, select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+customInput:focus, select:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+}
+
+button {
+  padding: 12px;
+  background: linear-gradient(135deg, #4a90e2, #357abf);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #357abf, #2c5ea8);
+}
+
+p {
+  text-align: center;
+  margin-top: 16px;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+p:hover {
+  color: #4a90e2;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.file-label {
+  font-weight: bold;
+  color: #555;
+}
+
+.file-input {
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-container {
+      padding: 20px;
+      max-width: 100%;
+  }
+  h2 {
+      font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+      padding: 10px;
+  }
+
+  .form-container {
+      padding: 15px;
+      border-radius: 12px;
+  }
+
+  h2 {
+      font-size: 1.2rem;
+  }
+
+  customInput, select, button {
+      padding: 10px;
+      font-size: 0.9rem;
+  }
+}
+
+label {
+  color: #17e0ec
+}

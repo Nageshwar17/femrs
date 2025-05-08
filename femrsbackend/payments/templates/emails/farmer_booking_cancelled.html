@@ -1,0 +1,19 @@
+<p>Dear {{ first_name }},</p>
+
+<p>We wanted to let you know that your booking for <strong>{{ equipment_name }}</strong> has been successfully cancelled.</p>
+
+<p><strong>Cancelled By:</strong> {{ cancelled_by }}</p>
+<p><strong>Booking ID:</strong> {{ booking_id }}<br>
+<strong>Rental Period:</strong> {{ rental_start }} to {{ rental_end }}</p>
+
+<p>
+We're processing your refund, and the amount will be credited to your original payment method shortly. You’ll receive a confirmation once the refund is completed.
+</p>
+
+<p>
+If you’d like to make another booking or explore more equipment, feel free to visit our website anytime.
+</p>
+
+<p>Thank you for choosing our platform.</p>
+
+<p>Regards,<br>The {{ site_name|default:"Farming Equipment and Machinery Rentals" }} Team</p>

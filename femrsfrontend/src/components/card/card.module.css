@@ -1,0 +1,66 @@
+/* card.module.css */
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #ccc; /* Add border to the card */
+  border-radius: 5px; /* Rounded corners */
+  
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Lift the card slightly */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+/* Image styling with hover effect */
+.card img {
+  transition: transform 0.3s ease; /* Smooth image scaling */
+  width: 100%; /* Ensure images scale properly */
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 2.5px;
+  height: 130px;
+
+}
+
+.card:hover img {
+  transform: scale(1.06); /* Slightly scale the image */
+  border-radius: 3px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+}
+
+/* Card content styling */
+.cardContent {
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* Title styling with hover effect */
+.card-title {
+  color: #ff8400; /* Default title color */
+  transition: color 0.3s ease; /* Smooth color transition */
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card:hover .card-title {
+  color: orange; /* Change title color on hover */
+}
+
+/* Button styling */
+.button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #ff7f50; /* Default button color */
+  color: white; /* Default button text color */
+  font-weight: 600;
+
+}
+
+.card:hover .button {
+  background: radial-gradient(ellipse, rgb(241, 213, 86), rgb(255, 210, 74));
+  color: white; /* Ensure button text stays white on hover */
+}

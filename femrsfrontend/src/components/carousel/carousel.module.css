@@ -1,0 +1,69 @@
+/* carousel.css */
+.carouselcontainer {
+    width: 100%;
+    max-width: 98%;
+    margin: auto;
+    overflow: hidden;
+    align-items: center;
+    background-color: white;
+    height: 100%;
+    margin-bottom: 5px;
+}
+
+.carouselimage {
+    width: 100%;
+    height: 274px;
+    object-fit: cover;
+    padding-bottom: 20px;
+}
+
+:global(.swiper-button-next),
+:global(.swiper-button-prev) {
+    color: #ff6568;
+    transition: background 0.3s ease;
+}
+
+
+:global(.swiper-pagination-bullet-active) {
+    transform: translateX(22px) ; /* Enlarge active bullet */
+    width: 17px;
+    height: 5px;
+    border-radius: 4px;
+    transition: transform 4s ease, background 3s ease; 
+  }
+
+  :global(.swiper-pagination-bullet) {
+    
+    background: #ff6568; /* Different color for bullet */
+    width: 14px;
+    height: 5px;
+    border-radius: 4px;
+  }
+ 
+  :global(.swiper-button-next) {
+    right: 0; /* Place next button on the right */
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  
+  :global(.swiper-button-prev) {
+    left: 0; /* Place previous button on the left */
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+
+  /* Responsive */
+@media (max-width: 600px) {
+
+    .carouselimage {
+        height: 110px; /* Adjust for mobile */
+    }
+
+    :global(.swiper-button-next),
+    :global(.swiper-button-prev) {
+      color: transparent;
+      background: transparent;
+      font-size: 12px;
+  }
+}
