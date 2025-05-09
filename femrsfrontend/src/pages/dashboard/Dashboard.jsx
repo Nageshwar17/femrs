@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SideBar from "../../components/sideBar/Sidebar";
+import SideBar from "../../components/sideBar/SideBar";
 import Equipment from "../../components/equipment/Equipment";
 import styles from "./dashboard.module.css"; // Import CSS Module
 import Bookings from "../../components/bookings/Bookings";
