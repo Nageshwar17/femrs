@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import ReactMarkdown from "react-markdown";
 import { BotMessageSquare, X } from "lucide-react";
-import styles from "./Chatbot.module.css"; // Import CSS module
+import styles from "./chatbot.module.css"; // Import CSS module
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
