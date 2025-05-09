@@ -165,3 +165,19 @@ def chatbot_response(request):
     except Exception as e:
         reply = f"❗ Error: {str(e)}"  # Display the actual error
     return Response({"reply": reply})
+
+
+
+
+# farmapp/views.py
+from django.http import HttpResponse
+from django.core.management import call_command
+
+def migrate_view(request):
+    call_command('makemigrations')
+    call_command('migrate')
+    return HttpResponse("Migrations Applied Successfully!")
+
+def collectstatic_view(request):
+    call_command('collectstatic', '--noinput')
+    return HttpResponse("Static files collected successfully!")
