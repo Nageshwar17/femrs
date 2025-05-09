@@ -25,7 +25,7 @@ const Sidebar = ({ userType, setActiveTab }) => {
         </button>
         
         
-        <button onClick={() => navigate("/home")}>🏠 <span>Back to Home</span></button>
+        <button onClick={() => navigate("/")}>🏠 <span>Back to Home</span></button>
       </aside>
     </>
   );
