@@ -60,7 +60,7 @@ const BookingForm = ({ userToken, isOpen, onClose, selectedEquipment }) => {
             const refreshToken = localStorage.getItem("refresh_token");
             if (!refreshToken) throw new Error("No refresh token available");
 
-            const response = await fetch("http://localhost:8000/api/token/refresh/", {
+            const response = await fetch("http://femrs.onrender.com/api/token/refresh/", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ refresh: refreshToken }),
@@ -106,7 +106,7 @@ const BookingForm = ({ userToken, isOpen, onClose, selectedEquipment }) => {
         
                 console.log("Request Body:", requestBody); // Debugging
         
-                const response = await fetch("http://localhost:8000/api/bookings/", {
+                const response = await fetch("http://femrs.onrender.com/api/bookings/", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -181,7 +181,7 @@ const BookingForm = ({ userToken, isOpen, onClose, selectedEquipment }) => {
         onClose();
     
         try {
-            const response = await fetch(`http://localhost:8000/api/initiate-payment/${equipment_id}/${booking_id}/`, {
+            const response = await fetch(`http://femrs.onrender.com/api/initiate-payment/${equipment_id}/${booking_id}/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -203,7 +203,7 @@ const BookingForm = ({ userToken, isOpen, onClose, selectedEquipment }) => {
     
                 handler: async function (paymentResponse) {
                     try {
-                        const verifyResponse = await fetch("http://localhost:8000/api/verify-payment/", {
+                        const verifyResponse = await fetch("http://femrs.onrender.com/api/verify-payment/", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",
@@ -224,7 +224,7 @@ const BookingForm = ({ userToken, isOpen, onClose, selectedEquipment }) => {
                     if (!verifyResponse.ok) throw new Error(verifyData.error || "Payment verification failed");
 
                     // **Step 1: Call Payment Success API**
-                    const successResponse = await fetch("http://localhost:8000/api/payment-success/", {
+                    const successResponse = await fetch("http://femrs.onrender.com/api/payment-success/", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",

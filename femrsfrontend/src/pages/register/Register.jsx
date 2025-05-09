@@ -46,7 +46,7 @@ const Register = () => {
                 data.append(key, formData[key]);
             });
 
-            await axios.post("http://localhost:8000/api/register/", data, {
+            await axios.post("http://femrs.onrender.com/api/register/", data, {
                 headers: { "Content-Type": "multipart/form-data" },
             });
 

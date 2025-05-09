@@ -26,7 +26,7 @@ const Login = ({ setUser }) => {
             localStorage.setItem("refresh_token", response.data.refresh);
     
             // ✅ 2. Check if we can fetch user profile:
-            const profileRes = await axios.get("http://localhost:8000/api/profile/", {
+            const profileRes = await axios.get("http://femrs.onrender.com/api/profile/", {
                 headers: { Authorization: `Bearer ${response.data.access}` },
             });
             console.log("User Profile Data:", profileRes.data);
