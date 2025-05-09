@@ -24,8 +24,8 @@ from chatbot.views import migrate_view, collectstatic_view  # Import the views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('run-migrations/', migrate_view),        # Temporary URL for migrations
-    path('collect-static/', collectstatic_view),  # Temporary URL for static files
+   # path('run-migrations/', migrate_view),        # Temporary URL for migrations
+    #path('collect-static/', collectstatic_view),  # Temporary URL for static files
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/', include('equipmentlisting.urls')),
