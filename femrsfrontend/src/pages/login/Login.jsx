@@ -16,7 +16,7 @@ const Login = ({ setUser }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("https:femrs.onrender.com/api/token/", formData);
+            const response = await axios.post("https://femrs.onrender.com/api/token/", formData);
             
             // ✅ 1. Check if we get the token:
             console.log("Access Token:", response.data.access);
@@ -33,7 +33,7 @@ const Login = ({ setUser }) => {
     
             // ✅ 3. Update user and navigate:
             setUser(profileRes.data);
-            navigate("/home");
+            navigate("/");
         } catch (err) {
             console.error("Error during login:", err);
             setError("Invalid username or password");
@@ -43,7 +43,7 @@ const Login = ({ setUser }) => {
 
     useEffect(() => {
         if (localStorage.getItem("access_token")) {
-            navigate("/home");
+            navigate("/");
         }
     }, [navigate]);
     
