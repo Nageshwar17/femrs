@@ -27,7 +27,7 @@ export default function Home({ user, setUser }) {
     useEffect(() => {
         const fetchEquipments = async () => {
             try {
-                const response = await fetch("http://localhost:8000/api/equipment/");
+                const response = await fetch("https://femrs.onrender.com/api/equipment/");
                 if (!response.ok) throw new Error("Failed to fetch equipment.");
                 const data = await response.json();
                 setEquipments(data);

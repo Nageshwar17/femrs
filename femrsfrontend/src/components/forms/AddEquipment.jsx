@@ -33,7 +33,7 @@ const AddEquipmentForm = ({ onClose }) => {
         });
 
         try {
-            await axios.post("http://femrs.onrender.com/api/equipment/", form, {
+            await axios.post("https://femrs.onrender.com/api/equipment/", form, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                     Authorization: `Bearer ${localStorage.getItem("access_token")}`,

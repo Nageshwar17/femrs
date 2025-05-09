@@ -28,7 +28,7 @@ const Dashboard = ({ user, setUser, refreshToken }) => {
   useEffect(() => {
     const fetchEquipments = async () => {
       try {
-        const response = await fetch("http://femrs.onrender.com/api/equipment/");
+        const response = await fetch("https://femrs.onrender.com/api/equipment/");
         if (!response.ok) throw new Error("Failed to fetch equipment.");
         const data = await response.json();
         console.log("Fetched Equipment Data:", data);

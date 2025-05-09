@@ -16,7 +16,7 @@ const Login = ({ setUser }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:8000/api/token/", formData);
+            const response = await axios.post("https://localhost:8000/api/token/", formData);
             
             // ✅ 1. Check if we get the token:
             console.log("Access Token:", response.data.access);
@@ -26,7 +26,7 @@ const Login = ({ setUser }) => {
             localStorage.setItem("refresh_token", response.data.refresh);
     
             // ✅ 2. Check if we can fetch user profile:
-            const profileRes = await axios.get("http://femrs.onrender.com/api/profile/", {
+            const profileRes = await axios.get("https://femrs.onrender.com/api/profile/", {
                 headers: { Authorization: `Bearer ${response.data.access}` },
             });
             console.log("User Profile Data:", profileRes.data);

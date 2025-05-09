@@ -16,7 +16,7 @@ const Bookings = ({ userId, userToken, refreshToken, setUserToken, userType }) =
 
   const fetchBookings = async (token = userToken) => {
     try {
-      const response = await fetch("http://femrs.onrender.com/api/bookings/", {
+      const response = await fetch("https://femrs.onrender.com/api/bookings/", {
         method: "GET",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -49,7 +49,7 @@ const Bookings = ({ userId, userToken, refreshToken, setUserToken, userType }) =
     if (!confirmCancel) return;
   
     try {
-      const response = await fetch(`http://femrs.onrender.com/api/bookings/${bookingId}/`, {
+      const response = await fetch(`https://femrs.onrender.com/api/bookings/${bookingId}/`, {
         method: "DELETE",
         headers: {
           "Authorization": `Bearer ${userToken}`,
@@ -77,7 +77,7 @@ const Bookings = ({ userId, userToken, refreshToken, setUserToken, userType }) =
 
   const handleReviewSubmit = async (equipmentId) => {
     try {
-      const response = await fetch("http://femrs.onrender.com/api/reviews/", {
+      const response = await fetch("https://femrs.onrender.com/api/reviews/", {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${userToken}`,
@@ -105,7 +105,7 @@ const Bookings = ({ userId, userToken, refreshToken, setUserToken, userType }) =
 
   const handleOpenReviewModal = async (equipmentId) => {
     try {
-      const response = await fetch(`http://femrs.onrender.com/api/reviews/?equipment_id=${equipmentId}`, {
+      const response = await fetch(`https://femrs.onrender.com/api/reviews/?equipment_id=${equipmentId}`, {
         headers: {
           "Authorization": `Bearer ${userToken}`,
           "Content-Type": "application/json",
@@ -135,7 +135,7 @@ const Bookings = ({ userId, userToken, refreshToken, setUserToken, userType }) =
 
   const refreshAccessToken = async () => {
     try {
-      const response = await fetch("http://femrs.onrender.com/api/token/refresh/", {
+      const response = await fetch("https://femrs.onrender.com/api/token/refresh/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

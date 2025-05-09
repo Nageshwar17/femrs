@@ -46,7 +46,7 @@ const filteredEquipments = searchTerm.trim().length >= 3
         if (!window.confirm("Are you sure you want to log out?")) return;
 
         try {
-            await axios.post("http://femrs.onrender.com/api/logout/", {}, {
+            await axios.post("https://femrs.onrender.com/api/logout/", {}, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("access_token")}`,
                 },

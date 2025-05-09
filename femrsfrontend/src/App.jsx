@@ -15,7 +15,7 @@ function App() {
             const refreshToken = localStorage.getItem("refresh_token");
             if (!refreshToken) throw new Error("No refresh token available");
 
-            const response = await axios.post("http://femrs.onrender.com/api/token/refresh/", {
+            const response = await axios.post("https://femrs.onrender.com/api/token/refresh/", {
                 refresh: refreshToken,
             });
 
@@ -37,7 +37,7 @@ function App() {
         if (!token) return;
 
         try {
-            const response = await axios.get("http://femrs.onrender.com/api/profile/", {
+            const response = await axios.get("https://femrs.onrender.com/api/profile/", {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setUser(response.data);
