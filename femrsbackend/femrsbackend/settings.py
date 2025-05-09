@@ -20,12 +20,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-b04p0edepy&%!jwwe!rvoy-6mi%-ey4k*9ferk&c^p=tf9%611'
+SECRET_KEY = os.getenv("SECRET_KEY")
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['*']  # Render will set the appropriate domain
 
 
 # Application definition
@@ -80,16 +82,16 @@ WSGI_APPLICATION = 'femrsbackend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+import dj_database_url
+
 DATABASES = {
-    'default': {
-       'ENGINE': 'django.db.backends.mysql',   # Use the MySQL backend
-        'NAME': 'femrs_db',           # Replace with your database name
-        'USER': 'root',           # Replace with your database user
-        'PASSWORD': 'Nag@12345',   # Replace with your database password
-        'HOST': 'localhost',                    # Set to 'localhost' or your database host
-        'PORT': '3306',                         # Default MySQL port
-    }
+    'default': dj_database_url.config(
+        default=os.getenv('DATABASE_URL'),
+        conn_max_age=600,
+        ssl_require=True
+    )
 }
+
 
 
 # Password validation
@@ -125,8 +127,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATIC_URL = 'static/'
+# Middleware for serving static files
+MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -146,11 +154,6 @@ MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
 # Allow all domains (for testing purposes)
 CORS_ALLOW_ALL_ORIGINS = True
 
-# Or allow specific domains
-# CORS_ALLOWED_ORIGINS = [
-#     'http://localhost:3000',
-#     'https://your-frontend-domain.com',
-# ]
 
 
 
@@ -194,6 +197,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'           # Or your email provider's SMTP server
 EMAIL_PORT = 587                         # Common SMTP port for TLS
 EMAIL_USE_TLS = True                     # Use TLS for secure connection
-EMAIL_HOST_USER = 'nageswararaonambari2001@gmail.com' # Your email address
-EMAIL_HOST_PASSWORD = 'qxrdxkigbktrnwgc'    # Your email password or app-specific password
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+   # Your email password or app-specific password
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER     # Default from email for sending
+
+
+
+
+
