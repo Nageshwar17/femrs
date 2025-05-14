@@ -1,7 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from django.conf.urls.static import static
-from femrsbackend.femrsbackend import settings
+from femrsbackend import settings
 from .views import EquipmentViewSet
 
 # Create a router and register our viewset
