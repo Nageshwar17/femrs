@@ -66,14 +66,14 @@ const filteredEquipments = searchTerm.trim().length >= 3
     return (
         <>
         <header className={styles.header}>
-            <div className={styles.logoName} onClick={() => navigate("/home")}>
+            <div className={styles.logoName} onClick={() => navigate("/")}>
                 <img src={logo} className={styles.logo} alt="Logo" />
             </div>
 
             <div className={styles.search}>
                 <div className={styles.searchBox}>
                     <div className={styles.searchIcon}>
-                        <SearchIcon sx={{ fontSize: 36 }} />
+                        <SearchIcon sx={{ fontSize: 28 }} />
                     </div>
                     <input
                         type="text"
