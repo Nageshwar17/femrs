@@ -20,3 +20,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+p {
+  color: black;
+}
