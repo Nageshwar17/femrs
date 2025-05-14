@@ -125,6 +125,7 @@ const AddEquipmentForm = ({ onClose }) => {
                         />
                         Available
                     </label>
+                    <label className={styles.customLabel}> Add Equipment Images</label>
                     <input
                         type="file"
                         name="image1"

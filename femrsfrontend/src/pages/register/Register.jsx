@@ -165,7 +165,7 @@ const Register = () => {
                 />
 
                 <button type="submit">Sign Up</button>
-                <p onClick={() => navigate("/login")}>
+                <p className={styles.pLink} onClick={() => navigate("/login")}>
                     Already have an account? Login
                 </p>
             </form>

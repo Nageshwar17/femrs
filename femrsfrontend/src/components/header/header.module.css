@@ -108,7 +108,7 @@
 
 /* Hover Effects */
 .searchBox:hover {
-    box-shadow: 0 0 12px rgba(209, 160, 11, 0.6);
+    box-shadow: 0 0 8px rgba(209, 160, 11, 0.6);
 }
 
 .searchInput:focus {

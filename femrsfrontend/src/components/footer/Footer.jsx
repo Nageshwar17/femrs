@@ -1,5 +1,4 @@
 // components/Footer.jsx
-import React from 'react';
 import styles from './footer.module.css';
 import {
   Mail,
@@ -18,7 +17,7 @@ const Footer = () => {
         <div className={styles.links}>
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="/home">Home</a></li>
+            <li><a href="/">Home</a></li>
             
           </ul>
         </div>
@@ -37,7 +36,7 @@ const Footer = () => {
       </div>
 
       <div className={styles.bottomSection}>
-        <p> {new Date().getFullYear()} Farming Equipment and Machinery Rental System</p>
+        <p> 2025 Farming Equipment and Machinery Rental System (FEMRS)</p>
       </div>
     </footer>
   );
