@@ -187,7 +187,9 @@ const Bookings = ({ userId, userToken, refreshToken, setUserToken, userType }) =
                 Booked From: {booking.rental_start_date} To {booking.rental_end_date}
               </p>
               <p className={styles.bookingPrice}>Total Days: {booking.total_days}</p>
-              <p className={styles.bookingPrice}>Total Price: ₹{booking.payment.amount}</p>
+              <p className={styles.bookingPrice}>
+                Total Price: ₹{booking.payment ? booking.payment.amount : <span>Loading...</span>}
+              </p>
               <div className={styles.modalButtons}>
               <button
                 className={styles.cancelButton}
