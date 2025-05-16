@@ -24,8 +24,8 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#os.getenv("DEBUG", "False") == "True"
+DEBUG = os.getenv("DEBUG", "False") == "True"
+
 
 ALLOWED_HOSTS = ['*']  # Render will set the appropriate domain
 
@@ -176,8 +176,8 @@ SIMPLE_JWT = {
 
 import os
 
-MEDIA_URL = '/static/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 import os
