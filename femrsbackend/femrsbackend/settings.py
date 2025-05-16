@@ -24,8 +24,8 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = "True"
-#os.getenv("DEBUG", "False") == 
+DEBUG = os.getenv("DEBUG", "False") == "True"
+
 
 ALLOWED_HOSTS = ['*']  # Render will set the appropriate domain
 
