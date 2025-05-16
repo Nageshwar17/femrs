@@ -145,7 +145,9 @@ const BookingForm = ({ userToken, isOpen, onClose, selectedEquipment }) => {
                     try {
                         const newToken = await refreshAccessToken();
                         if (newToken) {
-                            return await makeBookingRequest(newToken); // Retry with new token
+                            localStorage.setItem("access_token", newToken); // Update local storage
+                            token = newToken; // Update the local variable
+                            return await makeBookingRequest(token); // Retry with new token                           
                         } else {
                             setError("Session expired. Please log in again.");
                         }
