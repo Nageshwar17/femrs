@@ -147,6 +147,7 @@ const BookingForm = ({ userToken, isOpen, onClose, selectedEquipment }) => {
                         if (newToken) {
                             localStorage.setItem("access_token", newToken); // Update local storage
                             token = newToken; // Update the local variable
+                            console.log("token", token)
                             return await makeBookingRequest(token); // Retry with new token                           
                         } else {
                             setError("Session expired. Please log in again.");
