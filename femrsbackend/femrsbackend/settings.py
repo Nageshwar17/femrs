@@ -177,7 +177,7 @@ SIMPLE_JWT = {
 import os
 
 MEDIA_URL = '/static/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
 
 
 import os
