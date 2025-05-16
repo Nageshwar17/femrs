@@ -37,6 +37,7 @@ class InitiatePaymentView(APIView):
        
         try:
             client = razorpay.Client(auth=(settings.RAZORPAY_KEY, settings.RAZORPAY_SECRET))
+            print(settings.RAZORPAY_KEY)
             payment_data = {
                 "amount": int(booking.amount_payable * 100),
                 "currency": "INR",
