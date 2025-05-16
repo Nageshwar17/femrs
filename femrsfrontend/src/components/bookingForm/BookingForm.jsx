@@ -197,7 +197,7 @@ const BookingForm = ({ userToken, isOpen, onClose, selectedEquipment }) => {
     
             
             const options = {
-                key: "rzp_test_9k8wGNOqzslvTi", 
+                key: "rzp_test_pHlf0lb7dcXQJF", 
                 amount: data.amount, // Ensure this matches backend
                 currency: "INR",
                 name: "Farm Equipment Rental",
