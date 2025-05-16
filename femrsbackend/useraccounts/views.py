@@ -96,3 +96,19 @@ class ProfileView(APIView):
         profile_data = ProfileSerializer(profile).data
 
         return Response({"user": user_data, "profile": profile_data}, status=status.HTTP_200_OK)
+
+
+
+###
+# In any app's views.py
+
+from django.contrib.auth import get_user_model
+from django.http import HttpResponse
+
+def create_admin(request):
+    User = get_user_model()
+    if not User.objects.filter(username='admin').exists():
+        User.objects.create_superuser('nageswararao', 'nageswararaonambari2001@gmail.com', 'Nag@81271687')
+        return HttpResponse("Superuser created.")
+    else:
+        return HttpResponse("Superuser already exists.")
