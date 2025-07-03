@@ -4,21 +4,42 @@ import { Star, StarHalf, Star as StarOutline } from "lucide-react";
 import styles from "./equipment.module.css";
 import BookingForm from "../bookingForm/BookingForm";
 
-const EquipmentList = ({ equipments, loading, error, userType, isAuthenticated, userToken, userId, onOpenAddForm }) => {
+const EquipmentList = ({
+  equipments,
+  loading,
+  error,
+  userType,
+  isAuthenticated,
+  userToken,
+  userId,
+  onOpenAddForm,
+}) => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [selectedEquipment, setSelectedEquipment] = useState(null);
-  console.log("Logged-in User ID:", userId); // Debugging line
+
   if (loading) return <p>Loading equipments...</p>;
-  if (error) return <p>Error: {error}</p>;
-  console.log(userId);
+
+  if (error) {
+    return (
+      <div className={styles.errorFallback}>
+        <img
+          src="error.svg"
+          alt="Error"
+          className={styles.errorImage}
+        />
+        <h2>Something went wrong</h2>
+        <p>We couldn't load the equipment list. Please try again later.</p>
+        <Button onClick={() => window.location.reload()}>🔄 Retry</Button>
+      </div>
+    );
+  }
+
   // Filter equipment based on user type
   const filteredEquipments = equipments.filter((equipment) => {
     if (userType === "farmer") return equipment.available === true;
-    if (userType === "owner")  return equipment.user.id === userId;
-    return true; // Show all for other users
+    if (userType === "owner") return equipment.user.id === userId;
+    return true;
   });
-
-  
 
   const renderStars = (rating = 0) => {
     const fullStars = Math.floor(rating);
@@ -28,9 +49,13 @@ const EquipmentList = ({ equipments, loading, error, userType, isAuthenticated, 
 
     return (
       <>
-        {[...Array(fullStars)].map((_, i) => <Star key={`full-${i}`} className={styles.fullStar} />)}
+        {[...Array(fullStars)].map((_, i) => (
+          <Star key={`full-${i}`} className={styles.fullStar} />
+        ))}
         {hasHalfStar && <StarHalf key="half" className={styles.fullStar} />}
-        {[...Array(emptyStars)].map((_, i) => <StarOutline key={`empty-${i}`} className={styles.emptyStar} />)}
+        {[...Array(emptyStars)].map((_, i) => (
+          <StarOutline key={`empty-${i}`} className={styles.emptyStar} />
+        ))}
       </>
     );
   };
@@ -42,22 +67,31 @@ const EquipmentList = ({ equipments, loading, error, userType, isAuthenticated, 
       ) : (
         filteredEquipments.map((equipment) => (
           <Card key={equipment.id} className={styles.equipmentCard}>
-            <img src={equipment.image2} alt={equipment.equipment_name} className={styles.equipmentImage} />
+            <img
+              src={equipment.image2}
+              alt={equipment.equipment_name}
+              className={styles.equipmentImage}
+            />
             <CardContent className={styles.cardContent}>
               <p className={styles.equipmentLocation}>
                 {`${equipment.sub_district}, ${equipment.district}, ${equipment.state}, ${equipment.pin_code}`}
               </p>
-              <h6 className={styles.equipmentTitle}>{equipment.equipment_name}</h6>
+              <h6 className={styles.equipmentTitle}>
+                {equipment.equipment_name}
+              </h6>
 
               <div className={styles.priceRating}>
                 <div className={styles.starRating}>
                   {renderStars(equipment.average_rating)}
-                  <span className={styles.ratingValue}>{(equipment.average_rating || 0).toFixed(1)}</span>
+                  <span className={styles.ratingValue}>
+                    {(equipment.average_rating || 0).toFixed(1)}
+                  </span>
                 </div>
-                <p className={styles.equipmentPrice}>₹{equipment.price_per_day} /day</p>
+                <p className={styles.equipmentPrice}>
+                  ₹{equipment.price_per_day} /day
+                </p>
               </div>
 
-              {/* Action Buttons */}
               {userType === "owner" ? (
                 <p>✅ Added</p>
               ) : (
@@ -79,7 +113,6 @@ const EquipmentList = ({ equipments, loading, error, userType, isAuthenticated, 
         ))
       )}
 
-      {/* Booking Form */}
       {selectedEquipment && (
         <BookingForm
           userToken={userToken}
@@ -95,7 +128,6 @@ const EquipmentList = ({ equipments, loading, error, userType, isAuthenticated, 
         </Button>
       )}
 
-      {/* Login Modal */}
       {showLoginModal && (
         <div className={styles.modalOverlay}>
           <div className={styles.modalContent}>
