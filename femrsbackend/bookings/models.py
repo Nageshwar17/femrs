@@ -14,7 +14,7 @@ class Booking(models.Model):
     equipment = models.ForeignKey(Equipment, on_delete=models.CASCADE, related_name="bookings")
     equipment_owner = models.ForeignKey(User, on_delete=models.CASCADE, default=get_default_user)
 
-    booking_no = models.CharField(max_length=10, unique=True)
+    booking_no = models.CharField(max_length=10, unique=True, blank=True)
     shipping_address = models.TextField()
     pincode = models.CharField(max_length=10)
     rental_start_date = models.DateField()
@@ -28,7 +28,16 @@ class Booking(models.Model):
         return self.total_days * self.equipment.price_per_day
 
     def save(self, *args, **kwargs):
-        """Ensures calculated total cost before saving."""
+        # Generate unique booking number if not already set
+        if not self.booking_no:
+            try:
+                id_gen = IdGeneration.objects.first()
+                if not id_gen:
+                    id_gen = IdGeneration.objects.create(id_string="BOOK", id_num=1000)
+                self.booking_no = id_gen.generate_id()
+            except Exception as e:
+                raise ValueError(f"Error generating booking number: {e}")
+
         self.amount_payable = self.calculate_total_cost()
         super().save(*args, **kwargs)
 
