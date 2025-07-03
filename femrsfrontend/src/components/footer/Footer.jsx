@@ -31,7 +31,7 @@ const Footer = () => {
             </a>
           </p>
           <p>
-            <GITHUB size={16} />
+            
             <a href="https://github.com/Nageshwar17" className={styles.link}>
                 GITHUB
             </a>
