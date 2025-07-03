@@ -220,7 +220,7 @@
 .errorFallback {
   text-align: center;
   padding: 2rem;
-  background-color: #949492b1;
+  background-color: #9494929d;
   border: 1px solid #f8da7f;
   border-radius: 8px;
   margin: 2rem auto;
@@ -297,5 +297,32 @@
   }
   100% {
     background-color: #f0f0f0;
+  }
+}
+
+
+
+
+.retryButton {
+  background-color: #ff7043; /* bright orange */
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.retryButton:hover {
+  background-color: #0066ff;
+}
+
+/* Minimize on larger screens (desktop mode) */
+@media (min-width: 768px) {
+  .retryButton {
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
   }
 }

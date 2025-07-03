@@ -43,7 +43,9 @@ const EquipmentList = ({
         />
         <h2>Something went wrong</h2>
         <p>We couldn't load the equipment list. Please try again later.</p>
-        <Button onClick={() => window.location.reload()}>🔄 Retry</Button>
+        <Button className={styles.retryButton} onClick={() => window.location.reload()}>
+          🔄 Retry
+        </Button>
       </div>
     );
   }
