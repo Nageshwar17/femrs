@@ -17,7 +17,21 @@ const EquipmentList = ({
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [selectedEquipment, setSelectedEquipment] = useState(null);
 
-  if (loading) return <p>Loading equipments...</p>;
+  if (loading) {
+  return (
+    <div className={styles.equipmentGrid}>
+      {[...Array(6)].map((_, i) => (
+        <div key={i} className={styles.skeletonCard}>
+          <div className={styles.skeletonImage} />
+          <div className={styles.skeletonText} />
+          <div className={styles.skeletonTextShort} />
+          <div className={styles.skeletonButton} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
 
   if (error) {
     return (
