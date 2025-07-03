@@ -30,6 +30,12 @@ const Footer = () => {
                 nageswararaonambari2001@gmail.com
             </a>
           </p>
+          <p>
+            <GITHUB size={16} />
+            <a href="https://github.com/Nageshwar17" className={styles.link}>
+                GITHUB
+            </a>
+          </p>
           <p><Phone size={16} /><span>+91 6281271687</span></p>
           
         </div>
